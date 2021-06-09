@@ -11,7 +11,7 @@
   <% current_user.channels.each do |channel| %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= channel.channel %></a>
+        <%= link_to channel.channel, channel_posts_path(channel) %>
       </div>
     </div>
   <% end %>
