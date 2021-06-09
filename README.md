@@ -42,8 +42,8 @@
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
-| content  | string     | null: false                    |
-| deadline | string     | null: false                    |
+| content  | string     |                                |
+| deadline | date       |                                |
 | user     | references | null: false, foreign_key: true |
 | channel  | references | null: false, foreign_key: true |
 
