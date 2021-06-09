@@ -13,6 +13,7 @@
     <div class="message-content">
       <!-- 投稿したメッセージ内容を記述する -->
       <%= post.content %>
+      <br>締切日：<%= post.deadline %>
     </div>
     <%= image_tag post.image.variant(resize: '500x500'), class: 'message-image' if post.image.attached? %>
   </div>
