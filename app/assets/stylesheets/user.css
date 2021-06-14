@@ -9,6 +9,7 @@
 .account-page .account-page__inner .account-page__inner--left, .account-page .account-page__inner .account-page__inner--right {
   float: left;
   width: 50%;
+  height: calc(100vh - 348px);
 }
 .account-page .account-page__inner:after {
   clear: both;

@@ -27,6 +27,7 @@ li {
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
+  height: calc(100vh - 226px);
 }
 .chat-room-form__errors {
   margin: 30px 0;

@@ -4,7 +4,7 @@
 .side-bar {
   background-color: #253141;
   width: 300px;
-  height: 100vh;
+  height: calc(100vh - 106.25px);
 }
 .side-bar-header {
   height: 100px;
@@ -28,7 +28,7 @@
 }
 .rooms {
   background-color: #2F3E51;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 100px - 106.25px);
   padding: 0 20px;
   overflow: scroll;
 }
@@ -41,7 +41,7 @@
 }
 .chat {
   background-color: #FFFFFF;
-  width: calc(100vw - 300px);
+  width: calc(100vw - 300px - 300px);
 }
 .chat-header {
   height: 100px;
@@ -65,7 +65,7 @@
 }
 .messages {
   background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
+  height: calc(100vh - 100px - 90px - 106.25px);
   padding: 46px 40px 0;
   overflow: scroll;
 }
@@ -129,4 +129,19 @@
 }
 .hidden {
   display: none;
+}
+.other {
+  width: 300px;
+  height: calc(100vh - 106.25px);
+}
+.deadline {
+  height: 275px;
+  background-color: saddlebrown;
+}
+.hold {
+  height: 275px;
+  background-color: seagreen;
+}
+.memo {
+  height: calc(100vh - 275px - 275px - 106.25px);
 }
