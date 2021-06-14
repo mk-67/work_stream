@@ -14,6 +14,11 @@
       <!-- 投稿したメッセージ内容を記述する -->
       <%= post.content %>
       <br>締切日：<%= post.deadline %>
+      <label>
+        <input type="checkbox" id="cbA" value="A"/>
+        チェックボックスA
+      </label>
+      <p class="log"></p>
     </div>
     <%= image_tag post.image.variant(resize: '500x500'), class: 'message-image' if post.image.attached? %>
   </div>
