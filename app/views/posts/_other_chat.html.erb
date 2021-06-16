@@ -1,4 +1,10 @@
 <div class="deadline">
+<h1>締切日リスト</h1>
+<% @posts.each do |post| %>
+  <% if post.deadline %>
+    <p><%= post.content %></p>
+  <% end %>
+<% end %>
 </div>
 <div class="hold">
 </div>
