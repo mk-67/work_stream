@@ -1,0 +1,25 @@
+<div class="deadline">
+</div>
+<div class="hold">
+</div>
+<div class="memo">
+<h1>MEMO</h1>
+<%= form_with model: @memo, method: :post ,id: "form" do |form| %>
+  <%= form.text_field :memo, id: "memo" %>
+  <%= form.submit '投稿する' , id: "submit" %>
+<% end %>
+
+<div id="list">
+</div>
+
+<%# @memos.each do |memo| %>
+<div class="post">
+  <div class="post-date">
+    投稿日時：<%# memo.created_at %>
+  </div>
+  <div class="post-content">
+    <%# memo.memo %>
+  </div>
+</div>
+<%# end %>
+</div>

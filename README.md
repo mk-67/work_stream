@@ -25,6 +25,7 @@
 - has_many :channel_users
 - has_many :users, through: :channel_users
 - has_many :posts
+- has_one  :memo
 
 ## channel_users テーブル
 
@@ -40,19 +41,38 @@
 
 ## posts テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| content  | string     |                                |
-| deadline | date       |                                |
-| user     | references | null: false, foreign_key: true |
-| channel  | references | null: false, foreign_key: true |
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| content    | string     | null: false                    |
+| deadline   | date       |                                |
+| check_done | integer    |                                |
+| check_hold | integer    |                                |
+| user       | references | null: false, foreign_key: true |
+| channel    | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :channel
+- has_one :suspend
+
+## suspends テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| post   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :post
 
 ## memos テーブル
-| Column | Type   | Options |
-| ------ | ------ | ------- |
-| memo   | string |         |
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| memo    | string     |                                |
+| channel | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :channel

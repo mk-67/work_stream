@@ -6,6 +6,11 @@
   </div>
   <div class="right-header">
     <div class="header-button">
+      <%= link_to "チャットを編集する", edit_channel_path(@channel.id) %>
+    </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
       <%= link_to "チャットを終了する", channel_path(@channel), method: :delete %>
     </div>
   </div>
