@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @channel = Channel.find(params[:channel_id])
-    @posts = @channel.posts.includes(:user)
+    @posts = @channel.posts.includes(:user).order("deadline ASC")
   end
 
   def create
