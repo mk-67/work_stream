@@ -50,15 +50,15 @@ ActiveRecord::Schema.define(version: 2021_06_11_085547) do
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "memo"
+    t.bigint "channel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["channel_id"], name: "index_memos_on_channel_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.date "deadline"
-    t.boolean "check_done", default: false
-    t.boolean "check_hold", default: false
     t.bigint "user_id", null: false
     t.bigint "channel_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_085547) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "channel_users", "channels"
   add_foreign_key "channel_users", "users"
+  add_foreign_key "memos", "channels"
   add_foreign_key "posts", "channels"
   add_foreign_key "posts", "users"
 end

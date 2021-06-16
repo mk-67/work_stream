@@ -21,6 +21,19 @@ class ChannelsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @channel = Channel.find(params[:id])
+  end
+
+  def update
+    @channel = Channel.find(params[:id])
+    if @channel.update(channel_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
   def channel_params
     params.require(:channel).permit(:channel, user_ids: [])

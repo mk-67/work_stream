@@ -25,6 +25,7 @@
 - has_many :channel_users
 - has_many :users, through: :channel_users
 - has_many :posts
+- has_one  :memo
 
 ## channel_users テーブル
 
@@ -67,6 +68,11 @@
 
 ## memos テーブル
 
-| Column | Type   | Options |
-| ------ | ------ | ------- |
-| memo   | string |         |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| memo    | string     |                                |
+| channel | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :channel

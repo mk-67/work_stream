@@ -3,7 +3,6 @@ class PostsController < ApplicationController
     @post = Post.new
     @channel = Channel.find(params[:channel_id])
     @posts = @channel.posts.includes(:user)
-    @memos = Post.order(id: "DESC")
   end
 
   def create
@@ -15,8 +14,6 @@ class PostsController < ApplicationController
       @posts = @channel.posts.includes(:user)
       render :index
     end
-    Post.create(memo: params[:memo])
-    redirect_to action: :index
   end
 
   private
