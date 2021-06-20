@@ -1,0 +1,12 @@
+<h1>MEMO</h1>
+<%= link_to '新規投稿', new_channel_memo_path(@channel) %>
+<% @memos.each do |memo| %>
+  <div class="memo">
+    <div class="memo-date">
+      投稿日時：<%= l memo.created_at %>
+    </div>
+    <div class="memo-content">
+      <%= memo.memo %>
+    </div>
+  </div>
+<% end %>

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @channel = Channel.find(params[:channel_id])
     @posts = @channel.posts.includes(:user).order("deadline ASC")
     @like = Like.new
+    @memos = Memo.order(id: "DESC")
   end
 
   def create
