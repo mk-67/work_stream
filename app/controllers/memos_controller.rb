@@ -4,16 +4,16 @@ class MemosController < ApplicationController
     @memos = Memo.all
   end
 
-  def new
-    @channel = Channel.find(params[:channel_id])
-    @memo = Memo.new
-  end
+  #def new
+    #@channel = Channel.find(params[:channel_id])
+    #@memo = Memo.new
+  #end
 
   def create
     @channel = Channel.find(params[:channel_id])
     @memo = Memo.new(memo_params)
     @memo.save
-    #Memo.create(memo: params[:memo])
+    redirect_to channel_posts_path(@channel)
   end
 
   private
