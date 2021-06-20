@@ -3,6 +3,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @channel = Channel.find(params[:channel_id])
     @posts = @channel.posts.includes(:user).order("deadline ASC")
+    @like = Like.new
   end
 
   def create

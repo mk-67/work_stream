@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+  <% if post.liked_by?(current_user) %>
+    <%= link_to(post_add_path(post), method: :delete, remote: true, id: :"like-button-#{post.id}", class:"like-button") do %>
+      <i class="fas fa-heart icon-btn liked"></i>
+    <% end %>
+    <span class="like-name">LIKE!</span> :
+    <% likes = post.likes %>
+    <%= likes.last.user.name + (likes.size > 1 ? " else..." : "") %>
+  <% else %>
+    <%= link_to(post_add_path(post), method: :post, remote: true, id: :"like-button-#{post.id}", class:"like-button") do %>
+      <i class="far fa-heart icon-btn not-like"></i>
+    <% end %>
+    <span class="like-name">LIKE!</span> :
+        <% likes = post.likes %>
+    <% if likes.present?%>
+      <%= likes.first.user.name + (likes.size > 2 ? " else..." : "")%>
+      <% else %>
+      <%= ""%>
+    <% end %>
+  <% end %>
+<% end %>

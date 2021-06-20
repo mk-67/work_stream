@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :channels, only: [:index, :new, :create, :destroy, :edit, :update] do
     resources :posts, only: [:index, :create]
+      #resources :likes, only: [:create, :destroy]
+    #end
     resources :memos, only: [:index, :create]
+  end
+  resources :posts do
+    post 'add' => 'likes#create'
+    delete '/add' => 'likes#destroy'
   end
 end

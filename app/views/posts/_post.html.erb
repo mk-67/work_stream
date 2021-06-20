@@ -19,6 +19,11 @@
         チェックボックスA
       </label>
       <p class="log"></p>
+
+      <div id="like-btn-<%= post.id %>">
+      <%= render 'likes/like', post: post %>
+      </div>
+
     </div>
     <%= image_tag post.image.variant(resize: '500x500'), class: 'message-image' if post.image.attached? %>
   </div>

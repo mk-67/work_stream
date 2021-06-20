@@ -87,3 +87,16 @@ select {
 .field_with_errors {
   display: contents;
 }
+.images{
+  width: calc(100vw - 300px);
+  height: calc(100vh - 106.25px);
+  display: flex;
+}
+.left-image{
+  margin-top: 10vh;
+
+}
+.right-image{
+  margin-top: 27vh;
+
+}

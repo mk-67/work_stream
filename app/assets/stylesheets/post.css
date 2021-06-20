@@ -135,13 +135,16 @@
   height: calc(100vh - 106.25px);
 }
 .deadline {
-  height: 275px;
+  height: 33%;
   background-color: saddlebrown;
+  overflow: scroll;
 }
 .hold {
-  height: 275px;
+  height: 33%;
   background-color: seagreen;
+  overflow: scroll;
 }
 .memo {
-  height: calc(100vh - 275px - 275px - 106.25px);
+  height: 34%;
+  overflow: scroll;
 }
