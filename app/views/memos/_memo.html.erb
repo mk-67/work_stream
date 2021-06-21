@@ -1,6 +1,6 @@
 <h1>MEMO</h1>
-<%= form_with model: [@channel, @memos], url: channel_memos_path(@channel), method: :post, local: true do |form| %>
-  <%= form.text_field :memo %>
+<%= form_with model: [@channel, @memos], url: channel_memos_path(@channel), method: :post, id: "form" do |form| %>
+  <%= form.text_field :memo, id: "content" %>
   <%= form.submit '投稿する', id: "submit" %>
 <% end %>
 
