@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :create]
       #resources :likes, only: [:create, :destroy]
     #end
-    resources :memos, only: [:index, :new, :create]
+    resources :memos, only: [:index, :create]
   end
   resources :posts do
     post 'add' => 'likes#create'

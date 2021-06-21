@@ -1,5 +1,12 @@
 <h1>MEMO</h1>
-<%= link_to '新規投稿', new_channel_memo_path(@channel) %>
+<%= form_with model: [@channel, @memos], url: channel_memos_path(@channel), method: :post, id: "form" do |form| %>
+  <%= form.text_field :memo, id: "content" %>
+  <%= form.submit '投稿する', id: "submit" %>
+<% end %>
+
+<div id="list">
+</div>
+
 <% @memos.each do |memo| %>
   <div class="memo">
     <div class="memo-date">

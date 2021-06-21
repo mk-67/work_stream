@@ -1,5 +1,0 @@
-<h1>新規投稿ページ</h1>
-<%= form_with model: [@channel, @memo], url: channel_memos_path(@channel), method: :post, local: true do |form| %>
-  <%= form.text_field :memo %>
-  <%= form.submit '投稿する' %>
-<% end %>
