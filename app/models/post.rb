@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :channel
   has_one_attached :image
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :users, through: :likes
   has_one :hold
 
