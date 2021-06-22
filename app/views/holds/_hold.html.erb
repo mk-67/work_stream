@@ -1,0 +1,6 @@
+<h1>保留リスト</h1>
+<% @posts.each do |post| %>
+  <% if post.hold %>
+    <p><%= post.content %></p>
+  <% end %>
+<% end %>

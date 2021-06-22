@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "channels#index"
   resources :users, only: [:edit, :update]
   resources :channels, only: [:index, :new, :create, :destroy, :edit, :update] do
-    resources :posts, only: [:index, :create]
+    resources :posts, only: [:index, :create] do
+      resources :holds, only: [:index, :create]
+    end
       #resources :likes, only: [:create, :destroy]
     #end
     resources :memos, only: [:index, :create]
