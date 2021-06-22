@@ -3,21 +3,18 @@ class LikesController < ApplicationController
     before_action :set_like
 
     def create
-      binding.pry
-      user = current_user
-      post = Post.find(params[:post_id])
-      @like = Like.create(user_id: user.id, post_id: post.id)
+      like = current_user.likes.new(channel_id: @channel.id, post_id: @post.id)
+      like.save
     end
 
     def destroy
-      user = current_user
-      post = Post.find(params[:post_id])
-      like = Like.find_by(user_id: user.id, post_id: post.id)
-      like.delete
+      @like = Like.find_by(user_id: current_user.id, channel_id: @channel.id, poat_id: @post.id)
+      @like.destroy
     end
 
     private
     def set_like
+      @channel = Channel.find(params[:channel_id])
       @post = Post.find(params[:post_id])
     end
 
