@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_many :likes
   has_many :users, through: :likes
+  has_one :hold
 
   validates :content, presence: true, unless: :was_attached?
 
