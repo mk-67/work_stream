@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: work_stream_production
-  username: work_stream
-  password: <%= ENV['WORK_STREAM_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
