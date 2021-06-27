@@ -8,30 +8,38 @@
       <!-- 投稿した時刻を出力する -->
       <%= l post.created_at %>
     </div>
+    <% if post.deadline%>
+      <div class="post-deadline">
+      締切日：<%= post.deadline %>
+      </div>
+      <% end %>
   </div>
   <div class="lower-message">
     <div class="message-content">
       <!-- 投稿したメッセージ内容を記述する -->
+      <div class="post-content">
       <%= post.content %>
-      <br>締切日：<%= post.deadline %>
+      </div>
+    </div>
+    <div class="message-other">
+      
       <%#<label>
         <input type="checkbox" id="cbA" value="A"/>
         チェックボックスA
       </label>
       <p class="log"></p>%>
-      <%= form_with model: @holds, url: channel_post_holds_path(@channel, post), local: true do |f| %>
-        <div class="form-input">
-        <%= f.check_box :check_hold, {checked: false}, true, false %>保留
-        <%#= f.check_box :deadline %>済み
-        </div>
-        <%= f.submit '送信', class: 'form-submit' %>
-      <% end %>
-
-      <div id="like-btn-<%= post.id %>">
+      <div class="post-like", id="like-btn-<%= post.id %>">
       <%= render 'likes/like', post: post %>
       </div>
-
+      <%= form_with model: @holds, url: channel_post_holds_path(@channel, post), class: 'check-form', local: true do |f| %>
+        <div class="check-hold">
+        <%= f.check_box :check_hold, {checked: false}, true, false %>保留
+        <%#= f.check_box :deadline %><%#済み%>
+        </div>
+        <%= f.submit '更新', class: 'form-update' %>
+      <% end %>
     </div>
+
     <%= image_tag post.image.variant(resize: '500x500'), class: 'message-image' if post.image.attached? %>
   </div>
 </div>

@@ -1,5 +1,5 @@
-<h1>MEMO</h1>
-<%= form_with model: [@channel, @memos], url: channel_memos_path(@channel), method: :post, id: "form" do |form| %>
+<h1 class="memo-h">MEMO</h1>
+<%= form_with model: [@channel, @memos], url: channel_memos_path(@channel), method: :post, class: "memo-form", id: "form" do |form| %>
   <%= form.text_field :memo, id: "content" %>
   <%= form.submit '投稿する', id: "submit" %>
 <% end %>
@@ -8,7 +8,7 @@
 </div>
 
 <% @memos.each do |memo| %>
-  <div class="memo">
+  <div class="memo-lists">
     <div class="memo-date">
       投稿日時：<%= l memo.created_at %>
     </div>

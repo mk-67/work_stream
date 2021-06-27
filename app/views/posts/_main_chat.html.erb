@@ -6,12 +6,14 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <%= link_to "チャットを編集する", edit_channel_path(@channel.id) %>
+      <div class="chat-edit">
+      <%= link_to "チャンネル編集", edit_channel_path(@channel.id) %>
+      </div>
     </div>
   </div>
   <div class="right-header">
     <div class="header-button">
-      <%= link_to "チャットを終了する", channel_path(@channel), method: :delete %>
+      <%= link_to "チャンネル終了", channel_path(@channel), method: :delete %>
     </div>
   </div>
 </div>
@@ -23,7 +25,10 @@
 <%= form_with model: [@channel, @post], class: 'form', local: true do |f| %>
   <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
-    <%= f.date_field :deadline %>
+    <div class="deadline-text">
+      締切日選択
+    </div>
+    <%= f.date_field :deadline, class: "deadline-calendar" %>
     <label class="form-image">
       <span class="image-file">画像</span>
       <%= f.file_field :image, class: 'hidden' %>

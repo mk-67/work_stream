@@ -21,10 +21,12 @@
 }
 .create-room a {
   font-size: 10px;
-  border: 1px solid lightblue;
+  border: 1px solid white;
+  background-color: white;
   padding: 14px;
-  color: deepskyblue;
+  color: #253141;
   text-decoration: none;
+  border-radius: 3px;
 }
 .rooms {
   background-color: #2F3E51;
@@ -59,9 +61,14 @@
 }
 .header-button a {
   text-decoration: none;
-  border: 1px solid darkred;
-  color: darkred;
+  border: 1px solid #253141;
+  color: white;
+  background-color: #253141;
   padding: 20px;
+  border-radius: 3px;
+}
+.chat-edit{
+  margin-left: 30vw;
 }
 .messages {
   background-color: #FAFAFA;
@@ -74,6 +81,7 @@
 }
 .upper-message{
   display: flex;
+  align-items: center;
 }
 .message-user {
   color: #434a54;
@@ -90,10 +98,40 @@
 .message-content {
   color: #434a54;
   font-size: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: start;
+}
+.message-other{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #253141;
+}
+.post-deadline{
+  background-color: red;
+  color: white;
+  padding: 0 5px;
+  margin-left: 480px;
+}
+.post-like{
+  margin-left: 330px;
+}
+.check-form{
+  display: flex;
+  align-items: center;
+  margin-left: 330px;
+}
+.form-update{
+  margin-left: 15px;
+  border: none;
+  padding: 7px;
+  border-radius: 3px;
+  background-color: #00BB00;
+  color: white;
 }
 .form {
-  background-color: #DDDDDD;
+  background-color: #F5DEB3;
   height: 90px;
   padding: 20px 40px;
   display: flex;
@@ -117,6 +155,7 @@
   height: 50px;
   margin-left: 15px;
   padding: 0 20px;
+  border-radius: 3px;
 }
 .form-image {
   font-size: 12px;
@@ -126,6 +165,17 @@
   width: 60px;
   margin: 5px 10px;
   text-align: center;
+  border-radius: 3px;
+}
+.deadline-text{
+  text-align: center;
+  background-color: #FFC0CB;
+  color: gray;
+}
+.deadline-calendar{
+  border: none;
+  background-color: #FFC0CB;
+  color: gray;
 }
 .hidden {
   display: none;
@@ -136,15 +186,38 @@
 }
 .deadline {
   height: 33%;
-  background-color: saddlebrown;
   overflow: scroll;
+  background-color: #FFC0CB;
+}
+.deadline-lists{
+  display: flex;
+  margin-top: 7px;
+}
+.deadline-date{
+  margin-left: 7px;
+  margin-right: 15px;
+  background-color: red;
+  color: white;
+  padding: 0 5px;
 }
 .hold {
   height: 33%;
-  background-color: seagreen;
+  background-color: #93FFAB;
   overflow: scroll;
+}
+.hold-list{
+  margin-top: 7px;
+  margin-left: 7px;
 }
 .memo {
   height: 34%;
   overflow: scroll;
+  border-left: 1px solid;
+  border-top: 1px solid;
+}
+.hold-h{
+  font-size: 25px;
+}
+.deadline-h{
+  font-size: 25px;
 }

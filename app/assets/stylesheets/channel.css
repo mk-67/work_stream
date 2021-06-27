@@ -1,6 +1,6 @@
 h1 {
   letter-spacing: 2px;
-  font-size: 24px;
+  font-size: 38px;
   font-weight: bold;
   text-align: center;
 }
@@ -93,10 +93,17 @@ select {
   display: flex;
 }
 .left-image{
-  margin-top: 10vh;
+  margin-top: 4vh;
 
 }
 .right-image{
-  margin-top: 27vh;
+  margin-top: 0vh;
 
+}
+.top1{
+  margin-top: 130px;
+}
+.top2{
+  margin-top: 190px;
+  margin-bottom: 80px;
 }
