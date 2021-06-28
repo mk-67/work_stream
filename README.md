@@ -11,11 +11,17 @@ http://52.199.19.199/
 
 ## テスト用アカウント
 ### Basic認証
-* ID：admin
-* PASS：2222
-### テスト用アカウント
-- aaaaaa@aaaaaa
-- aaa111
+- ID：admin
+- PASS：2222
+### テスト用アカウント1
+- Email：aaaaaa@aaaaaa
+- PASS：aaa123
+### テスト用アカウント2
+- Email：bbbbbb@bbbbbb
+- PASS：bbb123
+### テスト用アカウント3
+- Email：cccccc@cccccc
+- PASS：ccc123
 ## 利用方法
 01. 新規登録・ログイン
 02. トップ画面へ遷移する
