@@ -91,19 +91,18 @@ select {
   width: calc(100vw - 300px);
   height: calc(100vh - 106.25px);
   display: flex;
+  overflow: scroll;
 }
 .left-image{
-  margin-top: 4vh;
 
 }
 .right-image{
-  margin-top: 0vh;
 
 }
 .top1{
   margin-top: 130px;
 }
 .top2{
-  margin-top: 190px;
+  margin-top: 130px;
   margin-bottom: 80px;
 }
