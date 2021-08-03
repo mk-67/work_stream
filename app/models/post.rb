@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
-  has_one :hold
+  has_one :hold, dependent: :destroy
 
   validates :content, presence: true, unless: :was_attached?
 

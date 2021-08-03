@@ -1,10 +1,12 @@
 class HoldsController < ApplicationController
   def index
+    @channel = Channel.find(params[:channel_id])
     @post = Post.find(params[:post_id])
     @holds = Hold.all
   end
 
   def create
+    @channel = Channel.find(params[:channel_id])
     @post = Post.find(params[:post_id])
     @hold = Hold.new(hold_params)
     @hold.save
@@ -13,6 +15,6 @@ class HoldsController < ApplicationController
 
   private
   def hold_params
-    params.permit(:check_hold).merge(post_id: @post.id)
+    params.permit(:check_hold).merge(channel_id: @channel.id, post_id: @post.id)
   end
 end
