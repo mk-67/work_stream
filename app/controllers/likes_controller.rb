@@ -5,11 +5,13 @@ class LikesController < ApplicationController
     def create
       like = current_user.likes.new(channel_id: @channel.id, post_id: @post.id)
       like.save
+      redirect_to channel_posts_path
     end
 
     def destroy
-      @like = Like.find_by(user_id: current_user.id, channel_id: @channel.id, poat_id: @post.id)
+      @like = Like.find_by(user_id: current_user.id, channel_id: @channel.id, post_id: @post.id)
       @like.destroy
+      redirect_to channel_posts_path
     end
 
     private
