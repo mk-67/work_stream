@@ -9,11 +9,9 @@
       <div class="chat-edit">
       <%= link_to "チャンネル編集", edit_channel_path(@channel.id) %>
       </div>
-    </div>
-  </div>
-  <div class="right-header">
-    <div class="header-button">
+      <div class="header-destroy">
       <%= link_to "チャンネル終了", channel_path(@channel), method: :delete %>
+      </div>
     </div>
   </div>
 </div>
