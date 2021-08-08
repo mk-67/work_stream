@@ -94,6 +94,7 @@
 }
 .lower-message {
   margin-top: 10px;
+  border-bottom: 3px solid #253141;
 }
 .message-content {
   color: #434a54;
@@ -106,7 +107,7 @@
   display: flex;
   align-items: center;
   padding-bottom: 20px;
-  border-bottom: 3px solid #253141;
+  
 }
 .post-deadline{
   background-color: red;
@@ -123,7 +124,7 @@
   margin-left: 330px;
 }
 .form-update{
-  margin-left: 15px;
+  margin-left: 330px;
   border: none;
   padding: 7px;
   border-radius: 3px;

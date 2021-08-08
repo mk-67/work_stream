@@ -13,6 +13,14 @@ class HoldsController < ApplicationController
     redirect_to channel_posts_path
   end
 
+  def destroy
+    @channel = Channel.find(params[:channel_id])
+    @post = Post.find(params[:post_id])
+    @hold = Hold.find_by(channel_id: @channel.id, post_id: @post.id)
+    @hold.destroy
+    redirect_to channel_posts_path
+  end
+
   private
   def hold_params
     params.permit(:check_hold).merge(channel_id: @channel.id, post_id: @post.id)

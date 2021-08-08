@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :channels, only: [:index, :new, :create, :destroy, :edit, :update] do
     resources :posts, only: [:index, :create] do
       resource :likes, only: [:create, :destroy]
-      resources :holds, only: [:index, :create]
+      resources :holds, only: [:index, :create, :destroy]
     end
       #resources :likes, only: [:create, :destroy]
     #end

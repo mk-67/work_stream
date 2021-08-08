@@ -21,25 +21,16 @@
       <%= post.content %>
       </div>
     </div>
+     <%= image_tag post.image.variant(resize: '500x500'), class: 'message-image' if post.image.attached? %>
     <div class="message-other">
-      
-      <%#<label>
-        <input type="checkbox" id="cbA" value="A"/>
-        チェックボックスA
-      </label>
-      <p class="log"></p>%>
       <div class="post-like", id="like-btn-<%= post.id %>">
       <%= render 'likes/like', post: post %>
       </div>
-      <%= form_with model: @holds, url: channel_post_holds_path(@channel, post), class: 'check-form', local: true do |f| %>
-        <div class="check-hold">
-        <%= f.check_box :check_hold, {checked: false}, true, false %>保留
-        <%#= f.check_box :deadline %><%#済み%>
-        </div>
-        <%= f.submit '更新', class: 'form-update' %>
+      <% if post.hold %>
+        <%= button_to '保留解除', channel_post_hold_path(@channel, post, @holds), class: 'form-update', method: :delete %>
+      <% else %>
+        <%= button_to '保留', channel_post_holds_path(@channel, post), class: 'form-update' %>
       <% end %>
     </div>
-
-    <%= image_tag post.image.variant(resize: '500x500'), class: 'message-image' if post.image.attached? %>
   </div>
 </div>
