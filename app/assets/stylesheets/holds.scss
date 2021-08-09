@@ -1,3 +1,25 @@
 // Place all the styles related to the holds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hold-list {
+  display: flex;
+  align-items: center;
+  margin-top: 7px;
+  margin-left: 7px;
+  margin-bottom: 7px;
+}
+.hold-user {
+  color: #434a54;
+  font-size: 16px;
+}
+.hold-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.hold-content {
+  margin-bottom: 10px;
+  margin-left: 7px;
+  font-size: 14px;
+}

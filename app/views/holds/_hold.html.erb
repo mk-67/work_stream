@@ -2,6 +2,14 @@
 <% @posts.each do |post| %>
   <% if post.hold %>
     <div class="hold-list">
+      <div class="hold-user">
+      <%= post.user.name %>
+      </div>
+      <div class="hold-date">
+      <%= l post.created_at %>
+      </div>
+    </div>
+    <div class="hold-content">
     <%= post.content %>
     </div>
   <% end %>

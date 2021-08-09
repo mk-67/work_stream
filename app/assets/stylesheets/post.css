@@ -206,10 +206,6 @@
   background-color: #93FFAB;
   overflow: scroll;
 }
-.hold-list{
-  margin-top: 7px;
-  margin-left: 7px;
-}
 .memo {
   height: 34%;
   overflow: scroll;
