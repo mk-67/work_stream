@@ -9,9 +9,16 @@
   margin-bottom: 10px;
   margin-left: 15px;
 }
+.memo-list{
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+}
 
 .memo-date{
   color: gray;
+  margin-left: 10px;
+  font-size: 14px;
 }
 
 .memo-content{

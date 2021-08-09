@@ -18,6 +18,6 @@ class MemosController < ApplicationController
 
   private
   def memo_params
-    params.require(:memo).permit(:memo).merge(channel_id: @channel.id)
+    params.require(:memo).permit(:memo).merge(user_id: current_user.id, channel_id: @channel.id)
   end
 end

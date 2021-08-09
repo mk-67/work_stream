@@ -81,10 +81,12 @@ ActiveRecord::Schema.define(version: 2021_06_21_092148) do
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "memo"
+    t.bigint "user_id", null: false
     t.bigint "channel_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["channel_id"], name: "index_memos_on_channel_id"
+    t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -120,6 +122,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_092148) do
   add_foreign_key "holds", "channels"
   add_foreign_key "holds", "posts"
   add_foreign_key "memos", "channels"
+  add_foreign_key "memos", "users"
   add_foreign_key "posts", "channels"
   add_foreign_key "posts", "users"
 end

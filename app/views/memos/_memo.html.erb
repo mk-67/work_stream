@@ -10,8 +10,13 @@
 <% @memos.each do |memo| %>
   <% if @channel.id == memo.channel.id %>
     <div class="memo-lists">
-      <div class="memo-date">
-        投稿日時：<%= l memo.created_at %>
+      <div class="memo-list">
+        <div class="memo-user">
+        <%= memo.user.name %>
+        </div>
+        <div class="memo-date">
+        <%= l memo.created_at %>
+        </div>
       </div>
       <div class="memo-content">
         <%= memo.memo %>
