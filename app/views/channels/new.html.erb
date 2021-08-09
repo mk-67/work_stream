@@ -3,7 +3,7 @@
   <%=form_with model: @channel, local: true do |f|%>
     <div class='chat-room-form__field'>
       <div class='chat-room-form__field--left'>
-        <%= f.label :channel, class: 'chat-room-form__label'%>
+        <%= f.label :チャンネル名, class: 'chat-room-form__label'%>
       </div>
       <div class='chat-room-form__field--right'>
         <%= f.text_field :channel, class: 'chat__room_name chat-room-form__input', placeholder: 'チャンネル名を入力してください'%>
