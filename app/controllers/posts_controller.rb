@@ -15,7 +15,8 @@ class PostsController < ApplicationController
       redirect_to channel_posts_path(@channel)
     else
       @posts = @channel.posts.includes(:user)
-      render :index
+      redirect_to channel_posts_path
+      #render :index
     end
   end
 
