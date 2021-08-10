@@ -26,7 +26,7 @@ http://52.199.19.199/
 ### 01. 新規登録・ログイン
 ### 02. トップ画面へ遷移する
 [![Image from Gyazo](https://i.gyazo.com/00ac28fb830c629e657b66156293e4f4.gif)](https://gyazo.com/00ac28fb830c629e657b66156293e4f4)
-### 03. 「チャットを作成する」ボタンからチャットルームを作成
+### 03. 「チャンネル作成」ボタンからチャットルームを作成
 [![Image from Gyazo](https://i.gyazo.com/e773017e30fd572d6e31ecea1c768db5.gif)](https://gyazo.com/e773017e30fd572d6e31ecea1c768db5)
 ### 04. チャンネル名とメンバーを設定するとチャットルームが作成される
 [![Image from Gyazo](https://i.gyazo.com/67da65c0a91152b2d476b4e558e558eb.gif)](https://gyazo.com/67da65c0a91152b2d476b4e558e558eb)
