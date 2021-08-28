@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.new
+    @post_deadline = PostDeadline.new
     @channel = Channel.find(params[:channel_id])
-    @posts = @channel.posts.includes(:user).order("deadline ASC")
+    @posts = @channel.posts.includes(:user)
+    @deadlines = Deadline.order("deadline ASC")
     @like = Like.new
     @holds = Hold.all
     @memos = Memo.order(id: "DESC")
@@ -10,8 +11,9 @@ class PostsController < ApplicationController
 
   def create
     @channel = Channel.find(params[:channel_id])
-    @post = @channel.posts.new(post_params)
-    if @post.save
+    @post_deadline = PostDeadline.new(post_deadline_params)
+    #@post = @channel.posts.new(post_params)
+    if @post_deadline.save
       redirect_to channel_posts_path(@channel)
     else
       @posts = @channel.posts.includes(:user)
@@ -22,7 +24,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.require(:post).permit(:content, :deadline, :image).merge(user_id: current_user.id)
+  def post_deadline_params
+    params.require(:post_deadline).permit(:content, :deadline, :image).merge(user_id: current_user.id, channel_id: params[:channel_id])
   end
 end

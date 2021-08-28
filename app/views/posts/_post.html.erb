@@ -8,11 +8,13 @@
       <!-- 投稿した時刻を出力する -->
       <%= l post.created_at %>
     </div>
-    <% if post.deadline%>
     <div class="post-deadline">
-    締切日：<%= post.deadline %>
-    </div>
+    <% @deadlines.each do |deadline| %>
+      <% if post.id == deadline.post.id && deadline.deadline %>
+        締切日：<%= deadline.deadline %>
+      <% end %>
     <% end %>
+    </div>
   </div>
   <div class="lower-message">
     <div class="message-content">

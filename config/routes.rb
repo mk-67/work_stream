@@ -7,12 +7,6 @@ Rails.application.routes.draw do
       resource :likes, only: [:create, :destroy]
       resources :holds, only: [:index, :create, :destroy]
     end
-      #resources :likes, only: [:create, :destroy]
-    #end
     resources :memos, only: [:index, :create]
   end
-  #resources :posts do
-    #post 'add' => 'likes#create'
-    #delete '/add' => 'likes#destroy'
-  #end
 end

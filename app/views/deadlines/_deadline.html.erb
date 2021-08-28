@@ -1,0 +1,15 @@
+<h1 class="deadline-h">締切日リスト</h1>
+<% @deadlines.each do |deadline| %>
+  <% @posts.each do |post| %>
+    <% if post.id == deadline.post.id && deadline.deadline %>
+      <div class="deadline-lists">
+        <div class="deadline-date">
+        <%= deadline.deadline %>
+        </div>
+        <div class="deadline-list">
+        <%= post.content %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

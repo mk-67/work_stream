@@ -1,17 +1,5 @@
 <div class="deadline">
-<h1 class="deadline-h">締切日リスト</h1>
-<% @posts.each do |post| %>
-  <% if post.deadline %>
-  <div class="deadline-lists">
-    <div class="deadline-date">
-    <%= post.deadline %>
-    </div>
-    <div class="deadline-list">
-    <%= post.content %>
-    </div>
-  </div>
-  <% end %>
-<% end %>
+<%= render partial: "deadlines/deadline" %>
 </div>
 <div class="hold">
 <%= render partial: "holds/hold" %>

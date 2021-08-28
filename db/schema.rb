@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_034942) do
+ActiveRecord::Schema.define(version: 2021_08_17_083519) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,11 +49,10 @@ ActiveRecord::Schema.define(version: 2021_08_10_034942) do
   end
 
   create_table "deadlines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "deadline"
     t.bigint "post_id"
-    t.bigint "channel_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["channel_id"], name: "index_deadlines_on_channel_id"
     t.index ["post_id"], name: "index_deadlines_on_post_id"
   end
 
@@ -91,7 +90,6 @@ ActiveRecord::Schema.define(version: 2021_08_10_034942) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
-    t.date "deadline"
     t.bigint "user_id", null: false
     t.bigint "channel_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -116,7 +114,6 @@ ActiveRecord::Schema.define(version: 2021_08_10_034942) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "channel_users", "channels"
   add_foreign_key "channel_users", "users"
-  add_foreign_key "deadlines", "channels"
   add_foreign_key "deadlines", "posts"
   add_foreign_key "holds", "channels"
   add_foreign_key "holds", "posts"

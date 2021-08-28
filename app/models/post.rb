@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :users, through: :likes
   has_one :hold, dependent: :destroy
+  has_one :deadline, dependent: :destroy
 
   validates :content, presence: true, unless: :was_attached?
 
